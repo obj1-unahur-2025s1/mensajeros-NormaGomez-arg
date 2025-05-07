@@ -1,0 +1,38 @@
+import matrix.*
+
+describe "group of tests for matrix" {
+
+  test "Neo puede hablar" {
+    neo.cargar()
+    assert.that (neo.puedeLlamar())
+  }
+
+  test "Neo no puede hablar" {
+    neo.hablar()
+    assert.notThat (neo.puedeLlamar())
+  }
+  test "Neo puede pasar por el puente"{
+     assert.that (puente.dejarPasar(neo))
+  }
+    test "Neo puede pasar por el Matrix"{
+     assert.that (matrix.dejarPasar(neo))
+  }
+    test "Chuck puede pasar por el puente"{
+     assert.that (puente.dejarPasar(chuck))
+  }
+    test "Chuck puede pasar por el Matrix"{
+     assert.that (matrix.dejarPasar(chuck))
+    }
+    test "Roberto puede llevar el paquete en el camión con acoplado" {
+  roberto.asignarVehiculo(camion)
+  assert.that( puente.dejarPasar(roberto))
+}
+  test "contratar a Pato" {
+  empresa.contratar(pato)
+  assert.equals(4, empresa.mensajeros().size())
+}
+  test "despedir a neo" {
+  empresa.despedir(neo)
+  assert.equals(2, empresa.mensajeros().size())
+}
+}
