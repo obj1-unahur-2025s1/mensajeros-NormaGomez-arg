@@ -35,4 +35,20 @@ describe "group of tests for matrix" {
   empresa.despedir(neo)
   assert.equals(2, empresa.mensajeros().size())
 }
+  test "despedir a todos"{
+  empresa.despedirTodos()
+  assert.equals(0, empresa.mensajeros().size())
+  }
+  test "Analizar si la mensajería es grande" {
+  empresa.esGrande()
+  assert.equals(true, empresa.esGrande())
+  }
+  test "Consultar si el paquete puede ser entregado por el primer empleado de la empresa de mensajería" {
+  assert.equals(true, empresa.entregaRapida(paquete))
 }
+  test "Saber el peso del último mensajero de la empresa." {
+    assert.equals(0, empresa.pesoFinal())
+  }
+
+}
+
